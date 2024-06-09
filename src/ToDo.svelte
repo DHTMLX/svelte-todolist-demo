@@ -1,6 +1,5 @@
 <script>
     import { onMount } from "svelte";
-    
     import { ToDo } from "@dhx/trial-todolist";
     import "@dhx/trial-todolist/dist/todo.css";
     

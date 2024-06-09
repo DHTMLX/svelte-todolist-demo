@@ -8,9 +8,9 @@
 
 ### Online
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DHTMLX/svelte-todolist-demo) 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DHTMLX/svelte-todolist-demo)
 
-### On the local host 
+### On the local host
 
 Clone the repository or download files.
 
