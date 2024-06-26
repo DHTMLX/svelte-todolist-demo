@@ -1,20 +1,36 @@
 <script>
-    import { onMount } from "svelte";
-    
-    import { ToDo } from "@dhx/trial-todolist";
+    import { onMount, onDestroy } from "svelte";
+    import { ToDo, Toolbar } from "@dhx/trial-todolist";
     import "@dhx/trial-todolist/dist/todo.css";
     
     export let users;
     export let tasks;
     export let projects;
 
-    let container;
+    let toolbar_container, todo_container;
+    let todo, toolbar;
+
     onMount(() => {
-        new ToDo(container, {
-            users, tasks, projects
+        todo = new ToDo(todo_container, {
+            users, 
+            tasks, 
+            projects,
+            // other configuration properties
         })
+
+        toolbar = new Toolbar(toolbar_container, {
+            api: todo.api,
+            // other configuration properties
+        })
+    });
+
+    onDestroy(() => {
+        todo.destructor();
+        toolbar.destructor();
     });
 </script>
 
-<div bind:this={container} style="width: 100%; height: 100%;"></div>
-
+<div class="component_container">
+    <div bind:this={toolbar_container}></div>
+    <div bind:this={todo_container} style="height: calc(100% - 56px);"></div>
+</div>
